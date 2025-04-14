@@ -37,12 +37,12 @@ export default function Hero() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="min-w-0 flex-1 bg-transparent px-4 outline-none"
+            className="w-full bg-transparent px-4 outline-none md:flex-1"
           />
           <Button
             type="submit"
             variant="primary"
-            className="cursor-pointer px-4 py-2 whitespace-nowrap hover:opacity-90"
+            className="cursor-pointer whitespace-nowrap hover:opacity-90"
             size="sm"
           >
             Sign Up
