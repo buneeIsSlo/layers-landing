@@ -4,6 +4,7 @@ import Hero from "@/sections/hero";
 import Integrations from "@/sections/integrations";
 import Intro from "@/sections/intro";
 import LogoTicker from "@/sections/logo-ticker";
+import CallToAction from "../sections/cta";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Features />
       <Integrations />
       <Faqs />
+      <CallToAction />
     </>
   );
 }
