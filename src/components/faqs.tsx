@@ -35,7 +35,7 @@ export default function Faqs() {
 
   return (
     <section className="py-24">
-      <div className="@container">
+      <div className="container-sm container">
         <div className="flex justify-center">
           <Badge>Faqs</Badge>
         </div>

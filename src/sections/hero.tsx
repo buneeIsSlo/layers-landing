@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="overflow-clip py-24">
-      <div className="@container relative">
+      <div className="relative container">
         <div className="absolute top-16 -left-32 hidden lg:block">
           <Image src={designExample1Image} alt="design example 1 image" />
         </div>
@@ -20,12 +20,12 @@ export default function Hero() {
         <div className="absolute -top-4 right-80 hidden lg:block">
           <Cursor name="Bryan" color="red" />
         </div>
-        <div className="flex justify-center">
+        <div className="flex items-center justify-center">
           <div className="inline-flex rounded-full bg-gradient-to-r from-purple-400 to-pink-400 px-3 py-1 font-semibold text-neutral-950">
             ✨ £7.5M seed round raised
           </div>
         </div>
-        <h1 className="mt-6 text-center text-6xl font-medium md:text-7xl lg:text-8xl">
+        <h1 className="mt-6 text-center text-6xl font-medium md:px-20 md:text-7xl lg:text-8xl">
           Impactful design, created effortlessly
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-center text-xl text-white/50">

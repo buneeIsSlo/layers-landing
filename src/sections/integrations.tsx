@@ -45,7 +45,7 @@ export type IntegrationsType = typeof integrations;
 export default function Integrations() {
   return (
     <section className="overflow-hidden py-24">
-      <div className="@container">
+      <div className="container">
         <div className="grid grid-cols-2 items-center lg:gap-2">
           <div>
             <Badge>Integrations</Badge>
