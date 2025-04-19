@@ -47,7 +47,7 @@ export default function Integrations() {
     <section className="overflow-hidden py-24">
       <div className="container">
         <div className="grid grid-cols-2 items-center lg:gap-2">
-          <div>
+          <div className="max-w-lg">
             <Badge>Integrations</Badge>
             <h2 className="mt-6 text-6xl font-medium">
               Plays well with <span className="text-lime-400">others</span>
@@ -62,6 +62,7 @@ export default function Integrations() {
               <IntegrationsColumn integrations={integrations} />
               <IntegrationsColumn
                 integrations={integrations.toReversed()}
+                reverse
                 className="hidden md:flex"
               />
             </div>
