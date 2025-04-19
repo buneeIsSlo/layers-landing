@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Badge from "./badge";
 import { twMerge } from "tailwind-merge";
+import { AnimatePresence, motion } from "motion/react";
 
 const faqs = [
   {
@@ -31,7 +34,7 @@ const faqs = [
 ];
 
 export default function Faqs() {
-  const selectedIndex = 0;
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <section className="py-24">
@@ -47,9 +50,12 @@ export default function Faqs() {
           {faqs.map((faq, faqIndex) => (
             <div
               key={faq.question}
-              className="rounded-2xl border border-white/10 bg-neutral-900 p-6"
+              className="cursor-default rounded-2xl border border-white/10 bg-neutral-900 p-6"
             >
-              <div className="flex items-center justify-between">
+              <div
+                className="flex items-center justify-between"
+                onClick={() => setSelectedIndex(faqIndex)}
+              >
                 <h3 className="font-medium">{faq.question}</h3>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +68,7 @@ export default function Faqs() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className={twMerge(
-                    "feather feather-plus flex-shrink-0 text-lime-400",
+                    "feather feather-plus flex-shrink-0 text-lime-400 transition duration-300",
                     selectedIndex === faqIndex && "rotate-45",
                   )}
                 >
@@ -70,13 +76,22 @@ export default function Faqs() {
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                 </svg>
               </div>
-              <div
-                className={twMerge(
-                  "mt-6",
-                  selectedIndex !== faqIndex && "hidden",
-                )}
-              >
-                <p className="text-white/50">{faq.answer}</p>
+              <div>
+                <AnimatePresence>
+                  {selectedIndex === faqIndex && (
+                    <motion.div
+                      initial={{ height: 0, marginTop: 0 }}
+                      animate={{
+                        height: "auto",
+                        marginTop: 24,
+                      }}
+                      exit={{ height: 0, marginTop: 0 }}
+                      className="overflow-y-hidden"
+                    >
+                      <p className="text-white/50">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           ))}
