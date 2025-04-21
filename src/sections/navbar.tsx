@@ -112,13 +112,28 @@ export default function Navbar() {
                 >
                   <div className="flex flex-col items-center gap-4 py-4">
                     {navLinks.map((link) => (
-                      <a key={link.label} href={link.href} className="">
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        className=""
+                        onClick={() => setIsOpen(!isOpen)}
+                      >
                         {link.label}
                       </a>
                     ))}
 
-                    <Button variant="secondary">Log In</Button>
-                    <Button variant="primary">Sign Up</Button>
+                    <Button
+                      variant="secondary"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      Log In
+                    </Button>
+                    <Button
+                      variant="primary"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      Sign Up
+                    </Button>
                   </div>
                 </motion.div>
               )}

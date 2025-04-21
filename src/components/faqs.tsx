@@ -37,7 +37,7 @@ export default function Faqs() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <section className="py-24">
+    <section className="py-24" id="faqs">
       <div className="container-sm container">
         <div className="flex justify-center">
           <Badge>Faqs</Badge>
